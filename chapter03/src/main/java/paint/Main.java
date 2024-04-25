@@ -1,4 +1,4 @@
-package shape;
+package paint;
 
 public class Main {
 
@@ -8,6 +8,8 @@ public class Main {
 //		point.setY(20);
 		drawPoint(point);
 		point.show(false);
+		ColorPoint p1 = new ColorPoint(20, 20, "R");
+		p1.show();
 	}
 	private static void drawPoint(Point point) {
 		point.show();

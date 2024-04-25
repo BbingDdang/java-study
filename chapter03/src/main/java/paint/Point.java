@@ -1,9 +1,13 @@
-package shape;
+package paint;
 
 public class Point {
 	private int x;
 	private int y;
 	
+//	public Point() {
+//		
+//	}
+//	
 	public Point(int x, int y) {
 		this.x = x;
 		this.y = y;
@@ -29,7 +33,8 @@ public class Point {
 	
 	public void show(boolean visible) {
 		if (visible) {
-			System.out.println("점 (" + x + ", " + y + ")을 그렸습니다.");
+			show();
+			//System.out.println("점 (" + x + ", " + y + ")을 그렸습니다.");
 		}
 		else {
 			System.out.println("점 (" + x + ", " + y + ")을 지웠습니다.");

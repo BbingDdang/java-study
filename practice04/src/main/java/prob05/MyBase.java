@@ -18,7 +18,7 @@ public class MyBase extends Base {
 		} else if (state.equals("오후")){
 			noon();
 		} else {
-			night();
+			super.service("밤");
 		}
 	}
 	

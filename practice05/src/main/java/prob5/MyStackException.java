@@ -6,6 +6,6 @@ public class MyStackException extends Exception {
 	}
 	
 	public MyStackException() {
-		super("Prob5.MyStackException: stack is empty");
+		super("stack is empty");
 	}
 }

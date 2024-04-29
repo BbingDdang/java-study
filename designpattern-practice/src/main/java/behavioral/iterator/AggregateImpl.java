@@ -10,14 +10,14 @@ public class AggregateImpl<E> implements Aggregate<E> {
 	@Override
 	public Iterator<E> createIterator() {
 		
-		return new IteratorImp();
+		return new IteratorImpl();
 		
 
 		
 		
 //		return null;
 	}
-	private class Iteratorimpl implements Iterator<E>{
+	private class IteratorImpl implements Iterator<E>{
 		int index = 0;
 		
 		@Override

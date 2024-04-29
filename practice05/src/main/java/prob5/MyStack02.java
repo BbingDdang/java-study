@@ -1,18 +1,16 @@
 package prob5;
 
-public class MyStack03<T> {
-	//Generic Method
+public class MyStack02 {
+	//buffer
 	private int top;
-	private T[] buffer;
+	private Object[] buffer;
 
-	@SuppressWarnings("unchecked")
-	public MyStack03(int capacity) {
+	public MyStack02(int capacity) {
 		top = -1;
-		buffer = (T[])new Object[capacity];
-		// buffer = (T[])Array.newInstance(klass, capacity);
+		buffer = new String[capacity];
 	}
 
-	public void push(T s) {
+	public void push(Object s) {
 		if (top == buffer.length - 1) {
 			resize();
 		}
@@ -20,12 +18,12 @@ public class MyStack03<T> {
 		buffer[++top] = s;		
 	}
 
-	public T pop() throws MyStackException {
+	public Object pop() throws MyStackException {
 		if (isEmpty()) {
 			throw new MyStackException("stack is empty");
 		}
 
-		T result = buffer[top];
+		Object result = buffer[top];
 		buffer[top--] = null;
 
 		return result;
@@ -35,9 +33,8 @@ public class MyStack03<T> {
 		return top == -1;
 	}
 
-	@SuppressWarnings("unchecked")
 	private void resize() {
-		T[] temp = (T[])new Object[buffer.length * 2];
+		Object[] temp = new Object[buffer.length * 2];
 		for (int i = 0; i <= top; i++) {
 			temp[i] = buffer[i];
 		}

@@ -11,7 +11,7 @@ public class BracesDecorator extends Decorator {
 	public String operation() {
 		String text = component.operation();
 		return "{" + text + "}";
-	}ㅓ=
+	}
 
 	
 }

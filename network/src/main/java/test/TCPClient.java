@@ -8,8 +8,8 @@ import java.net.Socket;
 import java.net.SocketException;
 
 public class TCPClient {
-	private static String SERVER_IP = "127.0.0.1";
-	private static int SERVER_PORT = 5002;
+	private static final String SERVER_IP = "127.0.0.1";
+	private static final int SERVER_PORT = 5002;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -37,7 +37,7 @@ public class TCPClient {
 				return;
 			}
 			
-			data = new String(buffer, 0, readByteCount, "UTF-8");
+			data = new String(buffer, 0, readByteCount, "UTF-8"); // inputreadbuffer? 을 통해 활용가능 
 			System.out.println("[client] received : " + data);
 		}
 		catch (SocketException e) {

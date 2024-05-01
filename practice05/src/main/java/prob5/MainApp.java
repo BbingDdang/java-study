@@ -13,9 +13,9 @@ public class MainApp {
 
 			while (stack.isEmpty() == false) {
 				String s = stack.pop();
-				System.out.println( s );
+				System.out.println(s);
 			}
-
+			
 			System.out.println("======================================");
 
 			stack = new MyStack(3);

@@ -22,5 +22,6 @@
   	<module>practice05</module>
   	<module>designpattern-practice</module>
   	<module>advancedjavafinal</module>
+  	<module>network</module>
   </modules>
 </project>

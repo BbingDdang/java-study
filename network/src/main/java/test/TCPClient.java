@@ -39,9 +39,11 @@ public class TCPClient {
 			
 			data = new String(buffer, 0, readByteCount, "UTF-8"); // inputreadbuffer? 을 통해 활용가능 
 			System.out.println("[client] received : " + data);
+			
+			
 		}
 		catch (SocketException e) {
-			System.out.println("[client] suddenly closed by server");
+			System.out.println("[client] Socket Exception");
 		}
 		catch (IOException e) {
 			System.out.println("[client] error : " + e);

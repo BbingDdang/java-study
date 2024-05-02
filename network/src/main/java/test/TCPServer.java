@@ -51,12 +51,17 @@ public class TCPServer {
 					
 					//6.Write Data
 					os.write(data.getBytes("UTF-8"));
+					try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 					
 					
 				}
 			} 
 			catch (SocketException e) {
-				System.out.println("[server] suddenly closed by client" + e);
+				System.out.println("[server] Socket Exception : " + e);
 				
 			}
 			catch (IOException e) {

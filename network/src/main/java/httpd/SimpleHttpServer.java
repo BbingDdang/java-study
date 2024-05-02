@@ -19,8 +19,8 @@ public class SimpleHttpServer {
 			   
 			// 2. Bind
 			String localhost = InetAddress.getLocalHost().getHostAddress();
-			serverSocket.bind( new InetSocketAddress( localhost, PORT ) );
-			consolLog("bind " + localhost + ":" + PORT);
+			serverSocket.bind( new InetSocketAddress( "0.0.0.0", PORT ) );
+			consolLog("bind " + "0.0.0.0" + ":" + PORT);
 
 			while (true) {
 				// 3. Wait for connecting ( accept )

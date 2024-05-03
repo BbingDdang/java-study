@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.io.Writer;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.Base64;
 import java.util.List;
 
 public class ChatServerThread extends Thread {
@@ -42,7 +43,9 @@ public class ChatServerThread extends Thread {
 					doJoin(tokens[1], pw);
 				}	
 				else if ("message".equals(tokens[0])) {
-					doMessage(tokens[1]);
+					byte[] decodedBytes = Base64.getDecoder().decode(tokens[1]);
+					String str = new String(decodedBytes);
+					doMessage(str);
 				}
 				else if ("quit".equals(tokens[0])) {
 					doQuit();

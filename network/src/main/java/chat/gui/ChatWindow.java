@@ -17,8 +17,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.Socket;
+import java.util.Base64;
 
 public class ChatWindow {
 	//socket
@@ -124,7 +124,8 @@ public class ChatWindow {
 				finish();
 			}
 			else {
-				this.writer.println("message:" + message);
+				String encodedStr = Base64.getEncoder().encodeToString(message.getBytes());
+				this.writer.println("message:" + encodedStr);
 				//this.writer.flush();	
 			}
 			
@@ -155,7 +156,7 @@ public class ChatWindow {
 				
 				while (true) {
 					String data = br.readLine();
-					
+					System.out.println(data);
 					if(data == null) {
 						break;
 					}

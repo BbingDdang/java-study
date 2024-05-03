@@ -15,6 +15,8 @@ public class TCPServer {
 		try {
 			//1. Server Socket 생성
 			serverSocket = new ServerSocket();
+			//1-1. FIN_WAIT2 -> TIME_WAIT 상태에서도 소켓 포트 할당이 가능하도록하기 위해
+			serverSocket.setReuseAddress(true);
 			
 			//2. Binding 
 			//	 Binding InetSocketAddress[InetAddress(IPAddress) + Port] in Socket
@@ -50,6 +52,13 @@ public class TCPServer {
 					System.out.println("[server] received : " + data);
 					
 					//6.Write Data
+					//SO_TIMEOUT test
+//					try {
+//						Thread.sleep(3000);
+//					} catch (InterruptedException e) {
+//						e.printStackTrace();
+//					}
+					
 					os.write(data.getBytes("UTF-8"));
 					try {
 						Thread.sleep(3000);

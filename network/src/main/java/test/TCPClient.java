@@ -18,6 +18,11 @@ public class TCPClient {
 			//1. Create Socket
 			socket = new Socket();
 			
+			//1-1 Check Socket Buffer size
+			int rcvBufferSize = socket.getReceiveBufferSize();
+			int sndBufferSize = socket.getSendBufferSize();
+			System.out.println(rcvBufferSize + ":" + sndBufferSize);
+			
 			//2. Connect Server
 			socket.connect(new InetSocketAddress(SERVER_IP, SERVER_PORT));
 			

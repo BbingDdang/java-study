@@ -8,7 +8,6 @@ import java.io.PrintWriter;
 import java.io.Writer;
 import java.net.Socket;
 import java.net.SocketException;
-import java.util.Collection;
 import java.util.List;
 
 public class ChatServerThread extends Thread {
@@ -37,7 +36,7 @@ public class ChatServerThread extends Thread {
 				
 				//pw.println(data);
 			
-				
+				System.out.println(data);
 				String[] tokens = data.split(":");
 				if ("join".equals(tokens[0])) {
 					doJoin(tokens[1], pw);
@@ -94,7 +93,7 @@ public class ChatServerThread extends Thread {
 	private void doMessage(String string) {
 		//log(nickname + ":" + string + "\r\n");
 		//System.out.println(nickname + ":" + string + "\r\n");
-		broadCast(nickname + ":" + string + "\r\n");
+		broadCast(nickname + ":" + string);
 		
 	}
 
@@ -106,8 +105,8 @@ public class ChatServerThread extends Thread {
 		
 		
 		//ack
-		pw.println("join:ok");
-		pw.flush();
+		//pw.println("join:ok");
+		//pw.flush();
 		
 	}
 	
